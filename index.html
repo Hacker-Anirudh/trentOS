@@ -3,22 +3,58 @@
 <link rel="stylesheet" href="style.css">
 <title>trentOS - performant and powerful webOS!</title>
 
-<body style="font-family: Helvetica, Noto Sans, sans-serif;">
-    <div class="top-bar" , style="display: flex; backdrop-filter: blur(10px); background-color: rgba(0, 0, 0, 0.25);
-    ">
-        <h3>trentOS</h3>
-        <div id="time" aria-live="polite" style="color: white; "></div>
+<body>
+    <div class="top-bar">
+        <h3 id="mainopen">trentOS 26.06</h3>
+        <p id="hobbyopen">hobbies</p>
+        <p id="projectopen">projects</p>
+        <h3 id="shutdownopen">Shut down</h3>
+        <div id="time" aria-live="polite"></div>
     </div>
-    <div class="page-wrap">
+    <div class="page-wrap" id="main">
+        <div id="mainheader" class="header">
+            <p>Hello there! (btw you can drag me)</p><img id="mainclose" src="assets/red.png" alt="Logo" />
+        </div>
         <img src="assets/jet.jpg" />
-        <h1 style="margin: 2px; color: white;">Welcome to trentOS!</h1>
-        <h3 style="color: white;">Choose your username:</h3>
-        <input type="text" id="fname" name="fname"><br><br>
+        <h1>Welcome to trentOS!</h1>
+        <p>I'm an eternal learner and complete nerd.
+        </p>
+        <p> To find out more about me, check the other apps!</p>
         <footer>
             <p>(c) 2020-2026 Anirudh Menon. All rights reserved.</p>
         </footer>
     </div>
 
+    <div class="page-wrap hidden" id="hobby">
+        <div id="hobbyheader" class="header">
+            <p>Hobbies</p><img id="hobbyclose" src="assets/red.png" alt="Close" />
+        </div>
+        <h3>A (non-exhaustive) list of my hobbies.</h3>
+        <p>- Programming</p>
+        <p>- Playing the piano</p>
+        <p>- Messing around with hardware</p>
+        <p>- Reading</p>
+        <p>- Stargazing</p>
+    </div>
+
+    <div class="page-wrap hidden" id="project">
+        <div id="projectheader" class="header">
+            <p>Projects</p><img id="projectclose" src="assets/red.png" alt="Close" />
+        </div>
+        <h3>Some of my software projects.</h3>
+        <a href="https://github.com/samsung-rhea-LOS">samsung-rhea-LOS: A repo for my Cyanogenmod for the Galaxy
+            Chat!</a>
+        <br>
+        <a href="https://github.com/Hacker-Anirudh/hplusplus">A replacement for my school's shitty website!</a>
+        <br>
+        <a href="https://github.com/Hacker-Anirudh/strand_reverser">A tool to reverse DNA strands (and more)!</a>
+        <br>
+        <p>And of course....</p>
+        <a href="https://github.com/Hacker-Anirudh/trentOS">trentOS: The 'OS' you're using right now!</a>
+        <br>
+    </div>
+
+    <script src="script.js"></script>
     <script type="module">
         import startClock from './clock.js';
         startClock();
