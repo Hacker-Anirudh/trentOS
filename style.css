@@ -1,0 +1,43 @@
+img {
+    border-radius: 35px;
+}
+
+body {
+    color: white;
+    background-image: url("assets/goldengate.webp");
+    background-size: cover;
+}
+
+input {
+    border-radius: 10px;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 2px;
+}
+
+.page-wrap {
+    padding: 8px;
+    /* padding around all elements together */
+    box-sizing: border-box;
+}
+
+.top-bar {
+    display: flex;
+    padding: auto;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+    font-family: Helvetica, "Noto Sans", sans-serif;
+    font-size: 16px;
+    border-radius: 10px;
+}
+
+.top-bar> :last-child {
+    margin-left: auto;
+}
+
+.top-bar>* {
+    margin: 0;
+}

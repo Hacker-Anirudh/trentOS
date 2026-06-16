@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="style.css">
+<title>trentOS - performant and powerful webOS!</title>
+
+<body style="font-family: Helvetica, Noto Sans, sans-serif;">
+    <div class="top-bar" , style="display: flex; backdrop-filter: blur(10px); background-color: rgba(0, 0, 0, 0.25);
+    ">
+        <h3>trentOS</h3>
+        <div id="time" aria-live="polite" style="color: white; "></div>
+    </div>
+    <div class="page-wrap">
+        <img src="assets/jet.jpg" />
+        <h1 style="margin: 2px; color: white;">Welcome to trentOS!</h1>
+        <h3 style="color: white;">Choose your username:</h3>
+        <input type="text" id="fname" name="fname"><br><br>
+        <footer>
+            <p>(c) 2020-2026 Anirudh Menon. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script type="module">
+        import startClock from './clock.js';
+        startClock();
+    </script>
+</body>
+
+</html>
