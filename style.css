@@ -50,6 +50,10 @@ input {
     margin-left: auto;
 }
 
+#musicToggle {
+    margin-left: auto;
+}
+
 .top-bar>* {
     margin: 0;
 }
@@ -77,4 +81,8 @@ h1 {
     margin-left: auto;
     height: 16px;
     width: 16px;
+}
+
+audio {
+    width: 52px;
 }
