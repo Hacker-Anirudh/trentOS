@@ -29,7 +29,9 @@ input {
     top: 15%;
     left: 15%;
     border: solid;
-    width: fit-content;
+    width: 320px;
+    min-width: 240px;
+    min-height: 160px;
     border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.40);
     backdrop-filter: blur(10px);
@@ -67,6 +69,13 @@ input {
 h1 {
     margin: 2px;
     color: white;
+    font-size: clamp(1rem, 2vw, 1.6rem);
+}
+
+.page-wrap p,
+.page-wrap a,
+.page-wrap h3 {
+    font-size: clamp(0.9rem, 1.2vw, 1rem);
 }
 
 /* Utility to hide app shells by default */
