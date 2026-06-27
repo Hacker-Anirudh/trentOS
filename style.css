@@ -33,6 +33,8 @@ input {
     border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.40);
     backdrop-filter: blur(10px);
+    resize: both;
+    overflow: auto;
 }
 
 .top-bar {
