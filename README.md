@@ -1,5 +1,5 @@
 # trentOS
-An open source web "OS" made by yours truly.
+An open source web "OS" made by yours truly. You can learn more about me using it!
 
 ## Why?
 Stardance, basically. And also it is pretty cool looking.
