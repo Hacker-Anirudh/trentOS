@@ -8,6 +8,7 @@
         <h3 id="mainopen">trentOS 26.06</h3>
         <p id="hobbyopen">hobbies</p>
         <p id="projectopen">projects</p>
+        <p id="bulletinopen">bulletin</p>
         <h3 id="shutdownopen">Shut down</h3>
         <audio controls autoplay loop id="music">
             <source src="assets/Universal_Vibe_Tracks.mp3" type="audio/mpeg">
@@ -60,13 +61,27 @@
         <br>
     </div>
 
+    <div class="page-wrap hidden" id="bulletin">
+        <div id="bulletinheader" class="header">
+            <p>Bulletin</p><img id="bulletinclose" src="assets/red.png" alt="Close" />
+        </div>
+        <h3>NEW!: keyboard shortcuts!</h3>
+        <p>- alt + f2 -> close all apps</p>
+        <p>- alt + h -> open hobbies</p>
+        <p>- alt + p -> open projects</p>
+        <p>- alt + m -> open about page</p>
+    </div>
+
     <script src="script.js"></script>
     <script type="module">
         import startClock from './clock.js';
         startClock();
     </script>
+    <h3>Bulletin:</h3>
     <a href="https://wethebratz.github.io/">Free USB Stick - Limited Time only!</a>
     <footer>Music: Universal - Vibe Tracks, via YouTube Audio Library</footer>
+
+
 </body>
 
 </html>

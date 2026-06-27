@@ -68,15 +68,19 @@ var mainScreenOpen = document.querySelector("#mainopen");
 
 var hobby = document.querySelector("#hobby");
 var project = document.querySelector("#project");
+var bulletin = document.querySelector("#bulletin");
 
 var hobbyOpen = document.querySelector("#hobbyopen");
 var projectOpen = document.querySelector("#projectopen");
 var hobbyClose = document.querySelector("#hobbyclose");
 var projectClose = document.querySelector("#projectclose");
+var bulletinOpen = document.querySelector("#bulletinopen");
+var bulletinClose = document.querySelector("#bulletinclose");
 
 // Make hobby and project draggable if present
 if (hobby) dragElement(hobby);
 if (project) dragElement(project);
+if (bulletin) dragElement(bulletin);
 
 if (mainScreenClose) {
     mainScreenClose.addEventListener("click", function () {
@@ -100,12 +104,18 @@ if (hobbyClose) {
 if (projectClose) {
     projectClose.addEventListener('click', function () { closeWindow(project); });
 }
+if (bulletinClose) {
+    bulletinClose.addEventListener('click', function () { closeWindow(bulletin); });
+}
 
 if (hobbyOpen) {
     hobbyOpen.addEventListener('click', function () { openWindow(hobby); });
 }
 if (projectOpen) {
     projectOpen.addEventListener('click', function () { openWindow(project); });
+}
+if (bulletinOpen) {
+    bulletinOpen.addEventListener('click', function () { openWindow(bulletin); });
 }
 
 // Shutdown: attempt to close the current tab/window. Browsers often block this
@@ -124,3 +134,50 @@ if (shutdownOpen) {
         }
     });
 }
+
+document.addEventListener("keydown", function (event) {
+    if (event.altKey && event.key === "F1") {
+        event.preventDefault();
+
+        // Close all page-wrap windows
+        var allWindows = document.querySelectorAll(".page-wrap");
+        allWindows.forEach(function (window) {
+            window.classList.add("hidden");
+        });
+    }
+});
+
+document.addEventListener("keydown", function (event) {
+    if (event.altKey && event.key === "F2") {
+        event.preventDefault();
+        document.querySelectorAll(".page-wrap").forEach(function (win) {
+            win.classList.add("hidden");
+        });
+    }
+
+    if (event.altKey && event.key.toLowerCase() === "h") {
+        event.preventDefault();
+        var hobbyWindow = document.getElementById("hobby");
+        if (hobbyWindow) hobbyWindow.classList.remove("hidden");
+    }
+
+    if (event.altKey && event.key.toLowerCase() === "p") {
+        event.preventDefault();
+        var projectWindow = document.getElementById("project");
+        if (projectWindow) projectWindow.classList.remove("hidden");
+    }
+
+    if (event.altKey && event.key.toLowerCase() === "m") {
+        event.preventDefault();
+        var mainWindow = document.getElementById("main");
+        if (mainWindow) mainWindow.classList.remove("hidden");
+    }
+
+    if (event.altKey && event.key.toLowerCase() === "m") {
+        event.preventDefault();
+        var mainWindow = document.getElementById("main");
+        if (mainWindow) mainWindow.classList.remove("hidden");
+    }
+
+
+});
