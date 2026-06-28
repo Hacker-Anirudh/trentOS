@@ -69,6 +69,7 @@ var mainScreenOpen = document.querySelector("#mainopen");
 var hobby = document.querySelector("#hobby");
 var project = document.querySelector("#project");
 var bulletin = document.querySelector("#bulletin");
+var terminal = document.querySelector("#terminal");
 
 var hobbyOpen = document.querySelector("#hobbyopen");
 var projectOpen = document.querySelector("#projectopen");
@@ -76,11 +77,16 @@ var hobbyClose = document.querySelector("#hobbyclose");
 var projectClose = document.querySelector("#projectclose");
 var bulletinOpen = document.querySelector("#bulletinopen");
 var bulletinClose = document.querySelector("#bulletinclose");
+var terminalOpen = document.querySelector("#terminalopen");
+var terminalClose = document.querySelector("#terminalclose");
+var terminalOutput = document.querySelector("#terminalOutput");
+var terminalInput = document.querySelector("#terminalInput");
 
-// Make hobby and project draggable if present
+// Make app windows draggable if present
 if (hobby) dragElement(hobby);
 if (project) dragElement(project);
 if (bulletin) dragElement(bulletin);
+if (terminal) dragElement(terminal);
 
 if (mainScreenClose) {
     mainScreenClose.addEventListener("click", function () {
@@ -107,6 +113,9 @@ if (projectClose) {
 if (bulletinClose) {
     bulletinClose.addEventListener('click', function () { closeWindow(bulletin); });
 }
+if (terminalClose) {
+    terminalClose.addEventListener('click', function () { closeWindow(terminal); });
+}
 
 if (hobbyOpen) {
     hobbyOpen.addEventListener('click', function () { openWindow(hobby); });
@@ -116,6 +125,57 @@ if (projectOpen) {
 }
 if (bulletinOpen) {
     bulletinOpen.addEventListener('click', function () { openWindow(bulletin); });
+}
+if (terminalOpen) {
+    terminalOpen.addEventListener('click', function () { openWindow(terminal); });
+}
+
+function writeTerminalLine(text) {
+    if (!terminalOutput) return;
+    var line = document.createElement('div');
+    line.className = 'terminal-line';
+    line.textContent = text;
+    terminalOutput.appendChild(line);
+    terminalOutput.scrollTop = terminalOutput.scrollHeight;
+}
+
+function runTerminalCommand(input) {
+    var command = input.trim();
+    if (!command) return;
+
+    writeTerminalLine('root# ' + command);
+
+    var parts = command.split(/\s+/);
+    var name = parts[0].toLowerCase();
+
+    if (name === 'uname') {
+        writeTerminalLine('trentOS 26.06.2, kernel Zinux 1.0, aarch420, Trent SHell v84');
+    } else if (name === 'pwd') {
+        writeTerminalLine('/home/trent');
+    } else if (name === 'help') {
+        writeTerminalLine('Commands: uname, pwd, clear, help, apt');
+    } else if (name === 'clear') {
+        if (terminalOutput) {
+            terminalOutput.innerHTML = '';
+        }
+    } else if (name == 'apt') {
+        writeTerminalLine('Did you think this was Debian?');
+    } else if (name == 'lscpu') {
+        writeTerminalLine('CPU: Sheintel Carbon a7-6769HX\nRAM: 32GB LPDDR7T-97333\nSSD: Macron 9980 PCIe Gen 8')
+    } else if (name == 'sudo') {
+        writeTerminalLine('No sudo needed here, you are already root :)')
+    } else {
+        writeTerminalLine('command not found: ' + name);
+    }
+}
+
+if (terminalInput) {
+    terminalInput.addEventListener('keydown', function (event) {
+        if (event.key === 'Enter') {
+            runTerminalCommand(terminalInput.value);
+            terminalInput.value = '';
+        }
+    });
 }
 
 // Shutdown: attempt to close the current tab/window. Browsers often block this

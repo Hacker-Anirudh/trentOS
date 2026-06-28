@@ -9,6 +9,7 @@
         <p id="hobbyopen">hobbies</p>
         <p id="projectopen">projects</p>
         <p id="bulletinopen">bulletin</p>
+        <p id="terminalopen">terminal</p>
         <h3 id="shutdownopen">Shut down</h3>
         <audio controls autoplay loop id="music">
             <source src="assets/Universal_Vibe_Tracks.mp3" type="audio/mpeg">
@@ -70,6 +71,20 @@
         <p>- alt + h -> open hobbies</p>
         <p>- alt + p -> open projects</p>
         <p>- alt + m -> open about page</p>
+    </div>
+
+    <div class="page-wrap hidden" id="terminal">
+        <div id="terminalheader" class="header">
+            <p>Terminal</p><img id="terminalclose" src="assets/red.png" alt="Close" />
+        </div>
+        <div class="terminal-output" id="terminalOutput" aria-live="polite">
+            <div class="terminal-line">trentOS shell</div>
+            <div class="terminal-line">Type 'help' for a list of commands.</div>
+        </div>
+        <div class="terminal-input-row">
+            <span class="terminal-prompt">root#</span>
+            <input id="terminalInput" type="text" autocomplete="off" spellcheck="false" />
+        </div>
     </div>
 
     <script src="script.js"></script>

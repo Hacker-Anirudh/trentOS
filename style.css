@@ -69,13 +69,14 @@ input {
 h1 {
     margin: 2px;
     color: white;
-    font-size: clamp(1rem, 2vw, 1.6rem);
+    font-size: 1.4rem;
 }
 
 .page-wrap p,
 .page-wrap a,
 .page-wrap h3 {
-    font-size: clamp(0.9rem, 1.2vw, 1rem);
+    font-size: 0.95rem;
+    line-height: 1.4;
 }
 
 /* Utility to hide app shells by default */
@@ -96,4 +97,47 @@ h1 {
 
 audio {
     width: 52px;
+}
+
+.terminal-output {
+    width: 100%;
+    min-height: 180px;
+    max-height: 260px;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.65);
+    color: #7efc7e;
+    padding: 8px;
+    border-radius: 8px;
+    font-family: monospace;
+    margin-bottom: 8px;
+    white-space: pre-wrap;
+}
+
+.terminal-line {
+    margin: 2px 0;
+}
+
+.terminal-input-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.terminal-prompt {
+    color: #7efc7e;
+    font-family: monospace;
+    white-space: nowrap;
+}
+
+#terminalInput {
+    flex: 1;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+    padding: 4px 6px;
+}
+
+#terminalInput:focus {
+    outline: none;
+    border-color: rgba(126, 252, 126, 0.7);
 }
